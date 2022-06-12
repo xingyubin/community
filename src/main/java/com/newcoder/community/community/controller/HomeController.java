@@ -40,6 +40,7 @@ public class HomeController {
             for (DiscussPost discussPost : postList) {
                 Map<String,Object> map = new HashMap<>();
                 map.put("discussPost",discussPost);
+                //根据userid查询得到发帖人
                 User user = userService.findUserById(discussPost.getUserId());
                 map.put("user",user);
                 discussPosts.add(map);
